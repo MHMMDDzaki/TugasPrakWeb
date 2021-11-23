@@ -101,7 +101,7 @@ include 'conn.php';
             if ($_GET['halaman'] == 'keranjang') {
               include 'keranjang.php';
             } elseif ($_GET['halaman'] == 'riwayat') {
-              header("location: riwayat.php");
+              echo "<script>location = 'riwayat.php';</script>";
             }
           } else {
             include 'home.php';
