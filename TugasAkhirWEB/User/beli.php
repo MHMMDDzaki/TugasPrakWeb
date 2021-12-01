@@ -15,5 +15,5 @@
 	//echo "</pre>";
 
 	echo "<script>alert('Produk Telah Ditambahkan Ke keranjang');</script>";
-	echo "<script>location='keranjang.php';</script>";
+	echo "<script>location='index.php?halaman=keranjang';</script>";
 ?>

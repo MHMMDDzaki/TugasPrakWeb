@@ -1,8 +1,14 @@
 <?php
 error_reporting(0);
 
+// if (!isset($_SESSION["keranjang"])) {
+// 	echo "<script>location = 'index.php'; </script>";
+// 	echo "<script>alert('Keranjang Kosong, Silahkan belanja');</script>";
+// } elseif(empty($_SESSION["keranjang"])){
+// 	echo "<script>alert('Keranjang Kosong, Silahkan belanja');</script>";
+// }
 if (!isset($_SESSION["keranjang"])) {
-	echo "<script>location = 'index.php'; </script>";
+	echo "<script>alert('Keranjang Kosong, Silahkan belanja');</script>";
 } elseif(empty($_SESSION["keranjang"])){
 	echo "<script>alert('Keranjang Kosong, Silahkan belanja');</script>";
 }
