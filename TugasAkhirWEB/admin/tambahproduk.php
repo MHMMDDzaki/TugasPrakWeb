@@ -65,12 +65,16 @@
 if (isset($_POST['submit'])) {
 
 	$nama = $_FILES['foto']['name'];
+	$target_dir = "../foto_produk/";
 	$lokasi = $_FILES['foto']['tmp_name'];
-	move_uploaded_file($lokasi, "../foto_produk/" . $nama);
+	$target_file = $target_dir . basename($nama);
+	move_uploaded_file($lokasi, $target_file);
 
-	$sql = mysqli_query($conn, "INSERT INTO produk(nama_produk,harga_produk,berat,foto_produk,kategori_produk,deskripsi_produk, Stok) VALUES('$_POST[nama]','$_POST[harga]','$_POST[berat]','$nama','$_POST[kategori]','$_POST[deskripsi]','$_POST[Stok]')") or die(mysqli_error($conn));
+	// move_uploaded_file($lokasi, "../foto_produk/" . $nama);
 
+	$sql = mysqli_query($conn, "INSERT INTO produk(nama_produk,harga_produk,berat,foto_produk,kategori_produk,deskripsi_produk, Stok) VALUES('$_POST[nama]','$_POST[harga]','$_POST[berat]','$nama','$_POST[kategori]','$_POST[deskripsi]','$_POST[stok]')") or die(mysqli_error($conn));
+	//echo $sql;
 	echo "<div class='alert alert-info'> Data Tersimpan </div>";
-	echo "<meta http-equiv='refresh' content='1;url=index.php?halaman=produk'>";
+	// echo "<meta http-equiv='refresh' content='1;url=index.php?halaman=produk'>";
 }
 ?>
